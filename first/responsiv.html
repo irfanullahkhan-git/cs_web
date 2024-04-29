@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+            .main_div{
+                text-align: center;
+                padding: 5px;
+                color: white;
+                font-size: 16px;
+                background-color: green;
+                height: auto;
+                width: 50%;
+                display: inline-block;
+            }
+
+            body {
+                background-color: aqua;
+            }
+
+            @media screen and (max-width: 575px) {
+                body {
+                    background-color: red;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                body {
+                    background-color: lightgreen;
+                }
+                .main_div{
+                    width: 100%;
+                }
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <div class="main_div">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem veritatis omnis corporis beatae itaque vel repudiandae tempora natus consequatur ea id nesciunt tenetur nulla, velit, neque cupiditate perferendis quod ratione.
+                </div>
+        </div>
+    </body>
+</html>
