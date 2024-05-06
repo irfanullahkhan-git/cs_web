@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scroll-position=initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: 'MUSICNET';
+      src: url('MUSICNET.ttf') format('truetype');
+    }
+
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+    .marquee {
+      display: inline-block;
+      width: 100%;  
+      overflow: hidden;
+      white-space: nowrap;
+      color: #ff3333;  
+      text-align: center;  
+      font-size: 100px;
+      font-family: 'MUSICNET', monospace;  
+      animation: marquee 20s linear infinite;
+      padding-top: 287px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">
+    NOT UNTILL WE ARE LOST DO WE BEGIN TO FIND OVERSELVES...
+  </div>
+</body>
+</html>
