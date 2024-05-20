@@ -1,0 +1,42 @@
+<htmL>
+    <head>
+ 
+    </head>
+    <body>
+        <h1 id="my_header" class="header_1">Hello World</h1>
+        <h1 id="my_another_header" class="header_1">Another Hello World</h1>
+        <!-- <button onclick="console.log('Hello i have been clicked!!')" ondblclick="console.log('Hello this is Double Click Event!!')">Click Me</button> -->
+        <!-- <button onclick='document.getElementById("my_header").innerHTML = "Hi. I have been changed due to a click event."' ondblclick="console.log('Hello this is Double Click Event!!')">Click Me</button> -->
+        <button onclick='changeHeader("green")' ondblclick="console.log('Hello this is Double Click Event!!')">Click Me</button>
+        <button id ="my_button" onclick='changeHeader("red")' ondblclick="console.log('Hello this is Double Click Event!!')">Click Me</button>
+    </body>
+    <script>
+        /*
+            var header = document.getElementById("my_header");
+            header.innerHTML = "Hi, I am new HTML";
+            console.log(header);
+        */
+
+        // var headers = document.getElementsByClassName("header_1");
+        // console.log(headers);
+        // headers[0].innerHTML = "Hi I was Hello World";
+        // headers[1].innerHTML = "Hi I was Another Hello World";
+
+        // var tag_headers = document.getElementsByTagName("h1");
+        // console.log(tag_headers);
+        // tag_headers[0].innerHTML = '<div style="background-color: green; color: pink;">Hi. I am Pink text with Green Background.</div>';
+        
+       
+            function changeHeader(color){
+                document.getElementById("my_header").innerHTML = '<div style="background-color: '+color+'; color: pink;">Hi. I am Pink text with '+color+' Background.</div>'
+            }
+
+            document.getElementById("my_button").addEventListener("click", function(){
+                console.log("Hi i am a click event")
+            });
+
+
+
+</script>
+    
+</htmL>

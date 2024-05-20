@@ -35,6 +35,7 @@
             a_value_for_dw--;
         }while(a_value_for_dw > -1);
 
+        
         var vehicles = ["Car", 3, "2","Bus", 4, "11", "Cycle", true, "Truck"];
         console.log("Array Length: ", vehicles.length);
         console.log("Array: ", vehicles);
@@ -43,6 +44,8 @@
         console.log("Array: ", vehicles);
         console.log(8 == 8 == 8 == 8);
         console.log(8 == 8);
+        debugger;
+
         vehicles.push("Bike");
         console.log("Array: ", vehicles);
         vehicles.pop();
@@ -52,5 +55,26 @@
         vehicles.shift();
         console.log("Array: ", vehicles);
         // https://www.w3schools.com/jsref/jsref_shift.asp
+        printAValue(1212);
+        // printAValue("hello world");
+        printAValue(1212);
+
+        function printAValue(param_1){
+            console.log("I received param: "+ param_1);
+        }
+
+
+
+        const numbers = [65, 44, 12, 4];
+        numbers.forEach(myFunction);
+
+        function myFunction(item, index) {
+            console.log("Item "+index+": ", item);
+        }
+
+        // method 2:
+        numbers.forEach(function(item, index){
+            console.log("Item "+index+": ", item);
+        });
     </script>
 </htmL>
