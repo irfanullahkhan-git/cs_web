@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            .main_container{
+                margin: auto;
+                width: 32%;
+                height: 50vh;
+                border: 8px dotted #ff0303;
+                background-color: #f3ff61;      
+            }
+
+            .row{
+                width: 100%;
+                margin: 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .col{
+                background-color: #eee;
+                border: 1px solid black;
+                width: 32%;
+                height: 15vh;
+                display: inline-block;
+                font-size: 85px;
+                text-align: center;
+            }
+            .x_col{
+                color: red;
+            }
+            .o_col{
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main_container">
+            <div class="row">
+                <div class="col" onclick="markColumn(this, 0)"></div>
+                <div class="col" onclick="markColumn(this, 1)"></div>
+                <div class="col" onclick="markColumn(this, 2)"></div>
+            </div>
+            <div class="row">
+                <div class="col" onclick="markColumn(this, 3)"></div>
+                <div class="col" onclick="markColumn(this, 4)"></div>
+                <div class="col" onclick="markColumn(this, 5)"></div>
+            </div>
+            <div class="row">
+                <div class="col" onclick="markColumn(this, 6)"></div>
+                <div class="col" onclick="markColumn(this, 7)"></div>
+                <div class="col" onclick="markColumn(this, 8)"></div>
+            </div>
+        </div>
+        <script>
+            let arr = [0, 0 ,0, 0, 0 ,0, 0, 0 ,0];
+
+            var turn = true;
+            alert("Turn: X Player");
+            function markColumn(that, position){
+                if(that.innerHTML != ""){
+                    return false;
+                }
+                console.log(that);
+                if(turn){
+                    that.innerHTML = "X";
+                    that.classList.add("x_col");
+                    arr[position] = 1;
+                }else{
+                    that.innerHTML = "O";
+                    arr[position] = 2;
+                    that.classList.add("o_col");
+                }
+                checkPatterens(turn);
+                // that.innerHTML = (turn) ? "X" : "O";
+                turn = !turn;
+            }
+
+            function checkPatterens(turn){
+                let turn_num = (turn) ? 1 : 2;
+                // 0, 1, 2
+                // 3, 4, 5
+                // 6, 7, 8
+                let row1 = (arr[0] == turn_num && arr[1] == turn_num && arr[2] == turn_num);
+                let row2 = (arr[3] == turn_num && arr[4] == turn_num && arr[5] == turn_num);
+                let row3 = (arr[6] == turn_num && arr[7] == turn_num && arr[8] == turn_num);
+
+                let col1 = (arr[0] == turn_num && arr[3] == turn_num && arr[6] == turn_num);
+                let col2 = (arr[1] == turn_num && arr[4] == turn_num && arr[7] == turn_num);
+                let col3 = (arr[2] == turn_num && arr[5] == turn_num && arr[8] == turn_num);
+                
+                let diagonal_1 = (arr[0] == turn_num && arr[4] == turn_num && arr[8] == turn_num);
+                let diagonal_2 = (arr[2] == turn_num && arr[4] == turn_num && arr[6] == turn_num);
+
+                if(row1 || row2 || row3 || col1 || col2 || col3 || diagonal_1 || diagonal_2){
+                    if(turn){
+                        alert("X is winner");
+                    }else{
+                        alert("O is winner");
+                    }
+                }
+
+            }
+        </script>
+    </body>
+</html>

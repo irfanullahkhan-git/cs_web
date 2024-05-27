@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            .yellow_div{
+                width: 30vw;
+                height: 30vh;
+                background-color: yellow;
+                color: red;
+                font-size: 20px;
+            }
+
+            .orange_div{
+                width: 30vw;
+                height: 30vh;
+                background-color: orange;
+                color: red;
+                font-size: 20px;
+            }
+            #result_container{
+                margin: 15px;
+                font-size: 20px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="yellow_div" id="first_container">
+            <p>Hello i am the first div</p>
+        </div>
+        <form>
+            <input type="text" id="text_field"/>
+            <div id="result_container">
+
+            </div>
+        </form>
+        <script>
+            var container = document.getElementById("first_container");
+            container.addEventListener("mouseover", function(){
+                container.classList.remove("yellow_div");
+                container.classList.add("orange_div");
+            });
+            container.addEventListener("mouseout", function(){
+                container.classList.remove("orange_div");
+                container.classList.add("yellow_div");
+            });
+
+            var text_field = document.getElementById("text_field");
+            var result_container = document.getElementById("result_container");
+            text_field.addEventListener("keydown", function(){
+                result_container.innerHTML = result_container.innerHTML+"KEY DOWN<br/>";
+            });
+            text_field.addEventListener("keypress", function(){
+                result_container.innerHTML = result_container.innerHTML+"KEY PRESS<br/>";
+            });
+            
+            text_field.addEventListener("keyup", function(){
+                result_container.innerHTML = result_container.innerHTML+"KEY UP<br/>";
+            });
+        </script>
+    </body>
+</html>
