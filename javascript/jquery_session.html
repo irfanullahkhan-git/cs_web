@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>JQuery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+        .farzi_class{
+            background-color: cadetblue;
+            color: blue;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header_1" class="header">Hello JQuery!!! I am H1</h1>
+    <h2 id="header_2" class="header">Hi JQuery!!! I am H2</h2>
+
+    <script>
+        var header_1 = document.getElementById("header_1");
+        header_1.innerHTML = "Hi, you have been updated.";
+        // header_1.classList.add("farzi_class");
+        // $("#header_1").addClass("farzi_class");
+        // $(header_1).addClass("farzi_class").removeClass("farzi_class");
+
+        $("#header_1").html("Hi, you have been updated by Jquery");
+
+        var all_headers = document.getElementsByClassName("header");
+        for(var index = 0; index < all_headers.length; index++){
+            all_headers[index].innerHTML = "You have been accessed by class name";
+        }
+
+        $(".header").html("You have been accessed by class name in Jquery");
+        $("h1").html("You have been accessed by class name in Jquery {h1}");
+
+
+    </script>
+</body>
+</html>
